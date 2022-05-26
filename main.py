@@ -1,10 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import cv2
-import tensorflow as tf
+#import tensorflow as tf
 from flask import Flask, request, jsonify
 
-model = tf.keras.models.load_model('model.h5')
+# model = tf.keras.models.load_model('model.h5')
 
 
 def get_img(imgpath):
@@ -15,11 +15,11 @@ def get_img(imgpath):
 
 
 def predict(x):
-    img = np.array(x)
-    predictions = model.predict(img)
+    #img = np.array(x)
+    #predictions = model.predict(img)
 
-    return predictions
-
+    #return predictions
+    pass
 
 # Get Clothes Object
 def get_clothes(actual, mask, min_color, max_color):
@@ -40,7 +40,7 @@ def index():
             return jsonify({"error": "no file"})
 
         try:
-            pass
+            print("wah!")
         except Exception as e:
             return jsonify({"error": str(e)})
 
